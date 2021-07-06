@@ -11,7 +11,7 @@ architectures:
 apps:
   nxengine-evo:
     command: usr/local/bin/nxengine-evo
-    command-chain: [bin/desktop-launch]
+    command-chain: [bin/desktop-launch, bin/launcher]
     desktop: usr/local/share/applications/org.nxengine.nxengine_evo.desktop
     common-id: org.nxengine.nxengine_evo
     plugs:
@@ -24,6 +24,12 @@ apps:
     - joystick
 
 parts:
+  launcher:
+    plugin: dump
+    source: snap/local/launcher
+    organize:
+      launcher.sh: bin/launcher
+    stage: [bin/launcher]
   source: &SOURCE
     plugin: nil
     source: https://github.com/nxengine/nxengine-evo.git
