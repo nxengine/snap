@@ -33,6 +33,7 @@ parts:
   source: &SOURCE
     plugin: nil
     source: https://github.com/nxengine/nxengine-evo.git
+    source-tag: v2.6.5-1
   metadata:
     plugin: nil
     <<: *SOURCE
